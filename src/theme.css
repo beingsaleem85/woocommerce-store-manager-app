@@ -1,0 +1,93 @@
+/**
+ * ⚠️ THEME CONFIGURATION — Tailwind v4
+ * Add custom theme values INSIDE the @theme { } block below.
+ * Do NOT nest @media, @layer, or other at-rules inside @theme.
+ * Do NOT create a tailwind.config.js — all theming is done here.
+ * Keep all { } braces balanced.
+ */
+@theme {
+	/* Colors - Light Mode (default) */
+	--color-background: #f8fafc;
+	--color-foreground: #0f172a;
+	--color-card: #ffffff;
+	--color-card-foreground: #0f172a;
+
+	--color-primary: #6366f1;
+	--color-primary-foreground: #ffffff;
+
+	--color-secondary: var(--color-gray-500);
+	--color-secondary-foreground: var(--color-white);
+
+	--color-destructive: var(--color-red-500);
+	--color-destructive-foreground: var(--color-white);
+
+	--color-muted: #f1f5f9;
+	--color-muted-foreground: #64748b;
+
+	--color-accent: var(--color-purple-500);
+	--color-accent-foreground: var(--color-white);
+
+	--color-border: #e2e8f0;
+	--color-input: #e2e8f0;
+	--color-ring: #6366f1;
+
+	/* Radius */
+	--radius-sm: 0.5rem;
+	--radius-md: 0.75rem;
+	--radius-lg: 1rem;
+	--radius-xl: 1.5rem;
+
+	/* Animation */
+	--animate-slide-up: slide-up 0.3s ease-out;
+}
+
+/* Dark Mode - Override theme colors when .dark class is on <html> */
+:root.dark {
+	--color-background: #0f172a;
+	--color-foreground: #f1f5f9;
+	--color-card: #1e293b;
+	--color-card-foreground: #f1f5f9;
+
+	--color-primary: #818cf8;
+	--color-primary-foreground: #0f172a;
+
+	--color-muted: #334155;
+	--color-muted-foreground: #94a3b8;
+
+	--color-border: #334155;
+	--color-input: #334155;
+	--color-ring: #818cf8;
+}
+
+/* Custom utilities */
+@keyframes slide-up {
+	from {
+		transform: translateY(100%);
+		opacity: 0;
+	}
+	to {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+.animate-slide-up {
+	animation: slide-up 0.3s ease-out;
+}
+
+.safe-area-top {
+	padding-top: env(safe-area-inset-top, 0);
+}
+
+.safe-area-bottom {
+	padding-bottom: env(safe-area-inset-bottom, 0);
+}
+
+.no-scrollbar {
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+	display: none;
+}
